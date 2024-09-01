@@ -17,8 +17,12 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/EKF_UKF_test)
 add_executable(EKF_UKF_test src/ekf_ukf_test.cpp)
 ament_target_dependencies(EKF_UKF_test rclcpp OpenCV)
 
+add_executable(rm_ekf_test src/rm_ekf_test.cpp)
+ament_target_dependencies(rm_ekf_test rclcpp OpenCV)
+
 install(TARGETS
   EKF_UKF_test
+  rm_ekf_test
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
